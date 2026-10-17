@@ -1,9 +1,11 @@
 {
   "name": "running-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "API cho ứng dụng theo dõi chạy bộ",
+  "main": "src/index.js",
   "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
