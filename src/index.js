@@ -3,6 +3,7 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const authRoutes = require('./routes/authRoutes');
+const runRoutes = require('./routes/runRoutes');
 const pool = require('./config/db'); // Đi ra 1 cấp thư mục để vào config/db
 require('dotenv').config();
 
@@ -90,6 +91,6 @@ app.post('/api/auth/login', async (req, res) => {
     res.status(500).json({ message: 'Lỗi server khi đăng nhập!' });
   }
 });
-
+app.use('/api/runs', runRoutes);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server đang chạy trên cổng ${PORT}`));
